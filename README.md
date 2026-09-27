@@ -126,6 +126,16 @@ run the launch script in `ubuntu-test` with `T3_VOICE_PORT=8002` and then
 request `/sample?language=en`. Leave port 8001 and the current app running.
 The NixOS trial uses port 9773 and its own state directory.
 
+On 2026-09-27, port 8002 transcribed the English sample as "Good morning. I
+am testing faster whisper on this machine." with HTTP 200. The NixOS
+service on port 9773 returned HTTP 200 from both NixOS and Windows. A forced
+service failure restarted it once and it returned HTTP 200 again. The live
+Windows T3 port 3773 and voice port 8001 remained available throughout.
+
+NixOS WSL currently reports a failed `anton` user D-Bus activation at the end
+of `nixos-rebuild switch`. The T3 system service started and passed the checks
+above despite that existing WSL user-session issue. Check `systemctl status
+t3code` after a rebuild instead of relying only on the command exit code.
 The old source path `~/t3code-voice-build` in Ubuntu is a symlink to this
 repo's `t3code/` checkout for existing shell references. Model files,
 release binaries, logs, recordings, credentials, and user history stay out
