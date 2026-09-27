@@ -1,0 +1,26 @@
+# Built runtime, state, recordings, and local logs
+runtime/
+state/
+logs/
+*.log
+*.pid
+.env
+.env.*
+!.env.example
+.direnv/
+result
+result-*
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+.cache/
+models/
+*.bin
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.webm
+.DS_Store
+Thumbs.db

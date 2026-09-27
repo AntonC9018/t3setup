@@ -1,0 +1,8 @@
+[submodule "t3code"]
+	path = t3code
+	url = https://github.com/AntonC9018/t3code.git
+	branch = voice-openvino
+[submodule "voice"]
+	path = voice
+	url = https://github.com/AntonC9018/whisper-dictation-local.git
+	branch = main
